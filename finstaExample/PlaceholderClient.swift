@@ -8,14 +8,6 @@
 import Foundation
 import Combine
 
-struct Photo: Decodable {
-    let albumId: Int?
-    let id: Int?
-    let title: String?
-    let url: String?
-    let thumbnailUrl: String?
-}
-
 struct PlaceholderClient {
     
     static let baseURL = "https://jsonplaceholder.typicode.com"

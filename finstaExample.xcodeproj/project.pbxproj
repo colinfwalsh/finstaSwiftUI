@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -17,6 +17,9 @@
 		D52B3F68254B280500808578 /* finstaExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52B3F67254B280500808578 /* finstaExampleTests.swift */; };
 		D52B3F73254B280500808578 /* finstaExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52B3F72254B280500808578 /* finstaExampleUITests.swift */; };
 		D52B3F87254B308F00808578 /* PlaceholderClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52B3F86254B308F00808578 /* PlaceholderClient.swift */; };
+		D5FA764C2551FC3D00F62FD3 /* PhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FA764B2551FC3D00F62FD3 /* PhotoView.swift */; };
+		D5FA76512551FEA100F62FD3 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FA76502551FEA100F62FD3 /* ContentViewModel.swift */; };
+		D5FA76562551FFEC00F62FD3 /* PlaceholderModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FA76552551FFEC00F62FD3 /* PlaceholderModels.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +61,9 @@
 		D52B3F72254B280500808578 /* finstaExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = finstaExampleUITests.swift; sourceTree = "<group>"; };
 		D52B3F74254B280500808578 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D52B3F86254B308F00808578 /* PlaceholderClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderClient.swift; sourceTree = "<group>"; };
+		D5FA764B2551FC3D00F62FD3 /* PhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoView.swift; sourceTree = "<group>"; };
+		D5FA76502551FEA100F62FD3 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
+		D5FA76552551FFEC00F62FD3 /* PlaceholderModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderModels.swift; sourceTree = "<group>"; };
 		E041CD81C60CC7F41156BAF4 /* Pods-finstaExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-finstaExample.debug.xcconfig"; path = "Target Support Files/Pods-finstaExample/Pods-finstaExample.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -109,7 +115,6 @@
 				B9F58E4C017A08D0893FB721 /* Pods-finstaExampleTests.debug.xcconfig */,
 				7294D6306618D12ED921AB1E /* Pods-finstaExampleTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -140,7 +145,10 @@
 			children = (
 				D52B3F55254B280400808578 /* FinstaExampleApp.swift */,
 				D52B3F86254B308F00808578 /* PlaceholderClient.swift */,
+				D5FA76552551FFEC00F62FD3 /* PlaceholderModels.swift */,
 				D52B3F57254B280400808578 /* ContentView.swift */,
+				D5FA76502551FEA100F62FD3 /* ContentViewModel.swift */,
+				D5FA764B2551FC3D00F62FD3 /* PhotoView.swift */,
 				D52B3F59254B280500808578 /* Assets.xcassets */,
 				D52B3F5E254B280500808578 /* Info.plist */,
 				D52B3F5B254B280500808578 /* Preview Content */,
@@ -414,6 +422,9 @@
 				D52B3F58254B280400808578 /* ContentView.swift in Sources */,
 				D52B3F56254B280400808578 /* FinstaExampleApp.swift in Sources */,
 				D52B3F87254B308F00808578 /* PlaceholderClient.swift in Sources */,
+				D5FA764C2551FC3D00F62FD3 /* PhotoView.swift in Sources */,
+				D5FA76512551FEA100F62FD3 /* ContentViewModel.swift in Sources */,
+				D5FA76562551FFEC00F62FD3 /* PlaceholderModels.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
