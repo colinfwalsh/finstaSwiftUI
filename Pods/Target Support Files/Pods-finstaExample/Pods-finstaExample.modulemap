@@ -1,0 +1,6 @@
+framework module Pods_finstaExample {
+  umbrella header "Pods-finstaExample-umbrella.h"
+
+  export *
+  module * { export * }
+}
