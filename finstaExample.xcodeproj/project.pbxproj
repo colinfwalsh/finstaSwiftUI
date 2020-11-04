@@ -144,11 +144,8 @@
 			isa = PBXGroup;
 			children = (
 				D52B3F55254B280400808578 /* FinstaExampleApp.swift */,
-				D52B3F86254B308F00808578 /* PlaceholderClient.swift */,
-				D5FA76552551FFEC00F62FD3 /* PlaceholderModels.swift */,
-				D52B3F57254B280400808578 /* ContentView.swift */,
-				D5FA76502551FEA100F62FD3 /* ContentViewModel.swift */,
-				D5FA764B2551FC3D00F62FD3 /* PhotoView.swift */,
+				D5FA765A2552DC7C00F62FD3 /* PlaceholderAPI */,
+				D5FA765B2552DC9800F62FD3 /* Views */,
 				D52B3F59254B280500808578 /* Assets.xcassets */,
 				D52B3F5E254B280500808578 /* Info.plist */,
 				D52B3F5B254B280500808578 /* Preview Content */,
@@ -180,6 +177,25 @@
 				D52B3F74254B280500808578 /* Info.plist */,
 			);
 			path = finstaExampleUITests;
+			sourceTree = "<group>";
+		};
+		D5FA765A2552DC7C00F62FD3 /* PlaceholderAPI */ = {
+			isa = PBXGroup;
+			children = (
+				D5FA76552551FFEC00F62FD3 /* PlaceholderModels.swift */,
+				D52B3F86254B308F00808578 /* PlaceholderClient.swift */,
+			);
+			path = PlaceholderAPI;
+			sourceTree = "<group>";
+		};
+		D5FA765B2552DC9800F62FD3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D52B3F57254B280400808578 /* ContentView.swift */,
+				D5FA76502551FEA100F62FD3 /* ContentViewModel.swift */,
+				D5FA764B2551FC3D00F62FD3 /* PhotoView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

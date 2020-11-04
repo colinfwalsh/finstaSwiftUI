@@ -30,7 +30,10 @@ class ContentViewModel: ObservableObject {
             .receive(on: RunLoop.main)
             .sink { completion in
                 print(completion)
-            } receiveValue: { photos in
+            } receiveValue: {[weak self] photos in
+                guard let self = self
+                else { return }
+                
                 self.isLoading = false
                 
                 guard let check = photos.first,
@@ -47,7 +50,7 @@ class ContentViewModel: ObservableObject {
         guard let photo = currentPhoto
         else { return }
         
-        let threshold = photos.index(photos.endIndex, offsetBy: -3)
+        let threshold = photos.index(photos.endIndex, offsetBy: -5)
         if photos.firstIndex(where: { $0.id == photo.id }) == threshold {
             fetchPhotos()
         }
