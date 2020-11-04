@@ -8,14 +8,10 @@
 import SwiftUI
 
 struct CommentsView: View {
-    @EnvironmentObject
-    var contentState: ContentViewState
+    @Binding
+    var parentState: ViewState
     
     let id: Int
-    
-    init(id: Int) {
-        self.id = id
-    }
     
     var body: some View {
         VStack {
@@ -24,7 +20,7 @@ struct CommentsView: View {
                 .opacity(0.5)
                 .frame(height: UIScreen.screenHeight / 1.5)
                 .onTapGesture {
-                    contentState.viewState = .normal
+                    parentState = .normal
                 }
             ZStack {
                 Rectangle()
@@ -33,11 +29,5 @@ struct CommentsView: View {
                 Text("Showing comments for Photo \(id)")
             }
         }
-    }
-}
-
-struct CommentsView_Previews: PreviewProvider {
-    static var previews: some View {
-        CommentsView(id: 0)
     }
 }

@@ -12,7 +12,6 @@ struct FinstaExampleApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environmentObject(ContentViewState())
         }
     }
 }

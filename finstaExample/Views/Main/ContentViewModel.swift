@@ -15,6 +15,9 @@ class ContentViewModel: ObservableObject {
     @Published
     var isLoading: Bool = false
     
+    @Published
+    var viewState: ViewState = .normal
+    
     var cancelled: Set<AnyCancellable> = Set()
     
     private var paginationVal = 0

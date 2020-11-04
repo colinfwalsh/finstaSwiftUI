@@ -14,8 +14,8 @@ struct PhotoView: View {
     @ObservedObject
     var viewModel: PhotoViewModel
     
-    @EnvironmentObject
-    var contentState: ContentViewState
+    @Binding
+    var parentState: ViewState
     
     var body: some View {
         VStack(alignment: .leading,
@@ -40,7 +40,7 @@ struct PhotoView: View {
                 }
                 
                 Button {
-                    contentState.viewState = .presentComments(photoId: viewModel.photo.id ?? -1)
+                    parentState = .presentComments(photoId: viewModel.photo.id ?? -1)
                 } label: {
                     Image(systemName: "bubble.left")
                         .font(.system(size: 30))
@@ -48,7 +48,7 @@ struct PhotoView: View {
                 }
                 
                 Button {
-                   contentState.viewState = .presentSend(photoId: viewModel.photo.id ?? -1)
+                    parentState = .presentSend(photoId: viewModel.photo.id ?? -1)
                 } label: {
                     Image(systemName: "paperplane")
                         .font(.system(size: 30))

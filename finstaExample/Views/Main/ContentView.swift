@@ -15,24 +15,16 @@ enum ViewState {
     case presentSend(photoId: Int)
 }
 
-class ContentViewState: ObservableObject {
-    @Published
-    var viewState: ViewState = .normal
-}
-
 struct ContentView: View {
     @ObservedObject
     var viewModel = ContentViewModel()
-    
-    @EnvironmentObject
-    var contentViewState: ContentViewState
     
     var body: some View {
         ZStack {
             ScrollView {
                 LazyVStack {
                     ForEach(viewModel.photos, id: \.id) {photo in
-                        PhotoView(viewModel: PhotoViewModel(photo: photo))
+                        PhotoView(viewModel: PhotoViewModel(photo: photo), parentState: $viewModel.viewState)
                             .onAppear {
                                 viewModel.shouldLoadMorePhotos(currentPhoto: photo)
                             }
@@ -45,13 +37,13 @@ struct ContentView: View {
                     .progressViewStyle(CircularProgressViewStyle())
             }
             
-            switch contentViewState.viewState {
+            switch viewModel.viewState {
             case .normal:
                 Spacer()
             case .presentComments(let id):
-                CommentsView(id: id)
+                CommentsView(parentState: $viewModel.viewState, id: id)
             case .presentSend(let id):
-                SendView(id: id)
+                SendView(parentState: $viewModel.viewState, id: id)
             }
         }
         

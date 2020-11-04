@@ -8,15 +8,11 @@
 import SwiftUI
 
 struct SendView: View {
-    @EnvironmentObject
-    var contentState: ContentViewState
+    @Binding
+    var parentState: ViewState
     
     let id: Int
-    
-    init(id: Int) {
-        self.id = id
-    }
-    
+
     var body: some View {
         VStack {
             Rectangle()
@@ -24,7 +20,7 @@ struct SendView: View {
                 .opacity(0.5)
                 .frame(height: UIScreen.screenHeight / 1.5)
                 .onTapGesture {
-                    contentState.viewState = .normal
+                    parentState = .normal
                 }
             ZStack {
                 Rectangle()
@@ -33,11 +29,5 @@ struct SendView: View {
                 Text("Showing send view for Photo \(id)")
             }
         }
-    }
-}
-
-struct SendView_Previews: PreviewProvider {
-    static var previews: some View {
-        SendView(id: 0)
     }
 }
