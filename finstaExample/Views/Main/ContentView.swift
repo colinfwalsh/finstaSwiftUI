@@ -9,17 +9,30 @@ import SwiftUI
 import Combine
 
 
+enum ViewState {
+    case normal
+    case presentComments(photoId: Int)
+    case presentSend(photoId: Int)
+}
+
+class ContentViewState: ObservableObject {
+    @Published
+    var viewState: ViewState = .normal
+}
 
 struct ContentView: View {
     @ObservedObject
     var viewModel = ContentViewModel()
+    
+    @EnvironmentObject
+    var contentViewState: ContentViewState
     
     var body: some View {
         ZStack {
             ScrollView {
                 LazyVStack {
                     ForEach(viewModel.photos, id: \.id) {photo in
-                        PhotoView(photo: photo)
+                        PhotoView(viewModel: PhotoViewModel(photo: photo))
                             .onAppear {
                                 viewModel.shouldLoadMorePhotos(currentPhoto: photo)
                             }
@@ -31,7 +44,18 @@ struct ContentView: View {
                 ProgressView()
                     .progressViewStyle(CircularProgressViewStyle())
             }
+            
+            switch contentViewState.viewState {
+            case .normal:
+                Spacer()
+            case .presentComments(let id):
+                CommentsView(id: id)
+            case .presentSend(let id):
+                SendView(id: id)
+            }
         }
+        
+        
         
     }
 }

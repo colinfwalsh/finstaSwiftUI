@@ -10,35 +10,37 @@ import SwiftUI
 import Combine
 
 struct PhotoView: View {
-    var photo: Photo
+
+    @ObservedObject
+    var viewModel: PhotoViewModel
     
-    @State
-    var heartTapped = false
+    @EnvironmentObject
+    var contentState: ContentViewState
     
     var body: some View {
         VStack(alignment: .leading,
                spacing: 10.0) {
             
-            Text("Photo \(photo.id ?? -1)")
+            Text("Photo \(viewModel.photo.id ?? -1)")
                 .padding(EdgeInsets(top: 0.0, leading: 10.0, bottom: 0.0, trailing: 0.0))
                 .font(.headline)
             
-            KFImage(URL(string: photo.url ?? ""))
+            KFImage(URL(string: viewModel.photo.url ?? ""))
                 .cancelOnDisappear(true)
                 .resizable()
                 .frame(height: 600)
             
             HStack(spacing: 20.0) {
                 Button {
-                    heartTapped = !heartTapped
+                    viewModel.didTapHeartButton()
                 } label: {
-                    Image(systemName: heartTapped ? "heart.fill" : "heart")
+                    Image(systemName: viewModel.heartTapped ? "heart.fill" : "heart")
                         .font(.system(size: 30))
-                        .foregroundColor(heartTapped ? .red : .gray)
+                        .foregroundColor(viewModel.heartTapped ? .red : .gray)
                 }
                 
                 Button {
-                    print("Tapped!")
+                    contentState.viewState = .presentComments(photoId: viewModel.photo.id ?? -1)
                 } label: {
                     Image(systemName: "bubble.left")
                         .font(.system(size: 30))
@@ -46,7 +48,7 @@ struct PhotoView: View {
                 }
                 
                 Button {
-                    print("Tapped!")
+                   contentState.viewState = .presentSend(photoId: viewModel.photo.id ?? -1)
                 } label: {
                     Image(systemName: "paperplane")
                         .font(.system(size: 30))
@@ -55,7 +57,7 @@ struct PhotoView: View {
             }.padding(5)
             
             HStack {
-                Text(photo.title ?? "")
+                Text(viewModel.photo.title ?? "")
             }.padding(EdgeInsets(top: 0, leading: 5, bottom: 0, trailing: 5))
             
             Divider()
