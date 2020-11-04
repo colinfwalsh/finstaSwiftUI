@@ -191,11 +191,27 @@
 		D5FA765B2552DC9800F62FD3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				D52B3F57254B280400808578 /* ContentView.swift */,
-				D5FA76502551FEA100F62FD3 /* ContentViewModel.swift */,
-				D5FA764B2551FC3D00F62FD3 /* PhotoView.swift */,
+				D5FA76622552DED100F62FD3 /* Main */,
+				D5FA76662552DEE100F62FD3 /* PhotoView */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		D5FA76622552DED100F62FD3 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				D52B3F57254B280400808578 /* ContentView.swift */,
+				D5FA76502551FEA100F62FD3 /* ContentViewModel.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		D5FA76662552DEE100F62FD3 /* PhotoView */ = {
+			isa = PBXGroup;
+			children = (
+				D5FA764B2551FC3D00F62FD3 /* PhotoView.swift */,
+			);
+			path = PhotoView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
