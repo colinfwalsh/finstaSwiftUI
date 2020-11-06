@@ -20,35 +20,35 @@ struct ContentView: View {
     var viewModel = ContentViewModel()
     
     var body: some View {
-        ZStack {
-            ScrollView {
-                LazyVStack {
-                    ForEach(viewModel.photos, id: \.id) {photo in
-                        PhotoView(viewModel: PhotoViewModel(photo: photo), parentState: $viewModel.viewState)
-                            .onAppear {
-                                viewModel.shouldLoadMorePhotos(currentPhoto: photo)
-                            }
+        NavigationView {
+            ZStack {
+                ScrollView {
+                    LazyVStack {
+                        ForEach(viewModel.photos, id: \.id) {photo in
+                            PhotoView(viewModel: PhotoViewModel(photo: photo),
+                                      parentState: $viewModel.viewState)
+                                .onAppear {
+                                    viewModel.shouldLoadMorePhotos(currentPhoto: photo)
+                                }
+                        }
                     }
+                }.padding(EdgeInsets(top: 20, leading: 0.0, bottom: 0.0, trailing: 0.0))
+                
+                if viewModel.isLoading {
+                    ProgressView()
+                        .progressViewStyle(CircularProgressViewStyle())
                 }
-            }.padding(EdgeInsets(top: 20, leading: 0.0, bottom: 0.0, trailing: 0.0))
-            
-            if viewModel.isLoading {
-                ProgressView()
-                    .progressViewStyle(CircularProgressViewStyle())
-            }
-            
-            switch viewModel.viewState {
-            case .normal:
-                Spacer()
-            case .presentComments(let id):
-                CommentsView(parentState: $viewModel.viewState, id: id)
-            case .presentSend(let id):
-                SendView(parentState: $viewModel.viewState, id: id)
-            }
+                
+                switch viewModel.viewState {
+                case .normal:
+                    Spacer()
+                case .presentComments(let id):
+                    CommentsView(parentState: $viewModel.viewState, id: id)
+                case .presentSend(let id):
+                    SendView(parentState: $viewModel.viewState, id: id)
+                }
+            }.navigationBarTitle(Text("FinstaGram 📸"))
         }
-        
-        
-        
     }
 }
 

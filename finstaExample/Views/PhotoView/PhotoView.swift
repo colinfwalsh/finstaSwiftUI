@@ -40,7 +40,9 @@ struct PhotoView: View {
                 }
                 
                 Button {
-                    parentState = .presentComments(photoId: viewModel.photo.id ?? -1)
+                    withAnimation {
+                        self.parentState = .presentComments(photoId: self.viewModel.photo.id ?? -1)
+                    }
                 } label: {
                     Image(systemName: "bubble.left")
                         .font(.system(size: 30))
@@ -48,7 +50,9 @@ struct PhotoView: View {
                 }
                 
                 Button {
-                    parentState = .presentSend(photoId: viewModel.photo.id ?? -1)
+                    withAnimation {
+                        self.parentState = .presentSend(photoId: self.viewModel.photo.id ?? -1)
+                    }
                 } label: {
                     Image(systemName: "paperplane")
                         .font(.system(size: 30))
