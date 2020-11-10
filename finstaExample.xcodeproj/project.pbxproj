@@ -20,6 +20,10 @@
 		D5FA764C2551FC3D00F62FD3 /* PhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FA764B2551FC3D00F62FD3 /* PhotoView.swift */; };
 		D5FA76512551FEA100F62FD3 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FA76502551FEA100F62FD3 /* ContentViewModel.swift */; };
 		D5FA76562551FFEC00F62FD3 /* PlaceholderModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FA76552551FFEC00F62FD3 /* PlaceholderModels.swift */; };
+		D5FA766B2552E0AA00F62FD3 /* PhotoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FA766A2552E0AA00F62FD3 /* PhotoViewModel.swift */; };
+		D5FA76702552E7B700F62FD3 /* UIScreen+Bounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FA766F2552E7B700F62FD3 /* UIScreen+Bounds.swift */; };
+		D5FA767F2552EABE00F62FD3 /* CommentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FA767E2552EABE00F62FD3 /* CommentsView.swift */; };
+		D5FA76842552EB5800F62FD3 /* SendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FA76832552EB5800F62FD3 /* SendView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +68,10 @@
 		D5FA764B2551FC3D00F62FD3 /* PhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoView.swift; sourceTree = "<group>"; };
 		D5FA76502551FEA100F62FD3 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
 		D5FA76552551FFEC00F62FD3 /* PlaceholderModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderModels.swift; sourceTree = "<group>"; };
+		D5FA766A2552E0AA00F62FD3 /* PhotoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewModel.swift; sourceTree = "<group>"; };
+		D5FA766F2552E7B700F62FD3 /* UIScreen+Bounds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScreen+Bounds.swift"; sourceTree = "<group>"; };
+		D5FA767E2552EABE00F62FD3 /* CommentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsView.swift; sourceTree = "<group>"; };
+		D5FA76832552EB5800F62FD3 /* SendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendView.swift; sourceTree = "<group>"; };
 		E041CD81C60CC7F41156BAF4 /* Pods-finstaExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-finstaExample.debug.xcconfig"; path = "Target Support Files/Pods-finstaExample/Pods-finstaExample.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -146,6 +154,7 @@
 				D52B3F55254B280400808578 /* FinstaExampleApp.swift */,
 				D5FA765A2552DC7C00F62FD3 /* PlaceholderAPI */,
 				D5FA765B2552DC9800F62FD3 /* Views */,
+				D5FA76772552E7CC00F62FD3 /* Extensions */,
 				D52B3F59254B280500808578 /* Assets.xcassets */,
 				D52B3F5E254B280500808578 /* Info.plist */,
 				D52B3F5B254B280500808578 /* Preview Content */,
@@ -202,6 +211,7 @@
 			children = (
 				D52B3F57254B280400808578 /* ContentView.swift */,
 				D5FA76502551FEA100F62FD3 /* ContentViewModel.swift */,
+				D5FA76882552EBB200F62FD3 /* SupplementaryViews */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -210,8 +220,26 @@
 			isa = PBXGroup;
 			children = (
 				D5FA764B2551FC3D00F62FD3 /* PhotoView.swift */,
+				D5FA766A2552E0AA00F62FD3 /* PhotoViewModel.swift */,
 			);
 			path = PhotoView;
+			sourceTree = "<group>";
+		};
+		D5FA76772552E7CC00F62FD3 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D5FA766F2552E7B700F62FD3 /* UIScreen+Bounds.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		D5FA76882552EBB200F62FD3 /* SupplementaryViews */ = {
+			isa = PBXGroup;
+			children = (
+				D5FA767E2552EABE00F62FD3 /* CommentsView.swift */,
+				D5FA76832552EB5800F62FD3 /* SendView.swift */,
+			);
+			path = SupplementaryViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -453,9 +481,13 @@
 			files = (
 				D52B3F58254B280400808578 /* ContentView.swift in Sources */,
 				D52B3F56254B280400808578 /* FinstaExampleApp.swift in Sources */,
+				D5FA767F2552EABE00F62FD3 /* CommentsView.swift in Sources */,
+				D5FA766B2552E0AA00F62FD3 /* PhotoViewModel.swift in Sources */,
 				D52B3F87254B308F00808578 /* PlaceholderClient.swift in Sources */,
 				D5FA764C2551FC3D00F62FD3 /* PhotoView.swift in Sources */,
+				D5FA76702552E7B700F62FD3 /* UIScreen+Bounds.swift in Sources */,
 				D5FA76512551FEA100F62FD3 /* ContentViewModel.swift in Sources */,
+				D5FA76842552EB5800F62FD3 /* SendView.swift in Sources */,
 				D5FA76562551FFEC00F62FD3 /* PlaceholderModels.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
