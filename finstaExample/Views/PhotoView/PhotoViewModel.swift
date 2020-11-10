@@ -21,12 +21,4 @@ class PhotoViewModel: ObservableObject {
     func didTapHeartButton() {
         heartTapped = !heartTapped
     }
-    
-    func didTapCommentButton() {
-        
-    }
-    
-    func didTapSendButton() {
-        
-    }
 }

@@ -13,6 +13,12 @@ struct CommentsView: View {
     
     let id: Int
     
+    var exampleComments = ["Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ac ultrices lacus. Ut nec tortor.",
+                           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ac ultrices lacus. Ut nec tortor.",
+                           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ac ultrices lacus. Ut nec tortor.",
+                           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ac ultrices lacus. Ut nec tortor.",
+                           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ac ultrices lacus. Ut nec tortor."]
+    
     var body: some View {
         ZStack {
             Rectangle()
@@ -30,7 +36,17 @@ struct CommentsView: View {
                         .frame(height: UIScreen.screenHeight / 2)
                         .cornerRadius(12.0)
                         .padding(.bottom, 0.0)
-                    Text("Showing comments for Photo \(id)")
+                    
+                    VStack {
+                        ForEach(exampleComments, id: \.self) {text in
+                            HStack {
+                                Text("username")
+                                    .bold() + Text(" ") + Text(text)
+                            }
+                        }
+                    }
+                    .frame(height: UIScreen.screenHeight / 2)
+                    .padding()
                 }
             }
         }
