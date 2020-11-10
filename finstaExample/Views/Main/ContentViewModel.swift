@@ -18,7 +18,7 @@ class ContentViewModel: ObservableObject {
     @Published
     var viewState: ViewState = .normal
     
-    var cancelled: Set<AnyCancellable> = Set()
+    private var cancelled: Set<AnyCancellable> = Set()
     
     private var paginationVal = 0
     
@@ -33,7 +33,7 @@ class ContentViewModel: ObservableObject {
             .receive(on: RunLoop.main)
             .sink { completion in
                 print(completion)
-            } receiveValue: {[weak self] photos in
+            } receiveValue: { [weak self] photos in
                 guard let self = self
                 else { return }
                 
@@ -44,8 +44,7 @@ class ContentViewModel: ObservableObject {
                 else { return }
                 
                 self.photos.append(contentsOf: photos)
-                self.paginationVal += 10
-            }
+                self.paginationVal += 10 }
             .store(in: &cancelled)
     }
     

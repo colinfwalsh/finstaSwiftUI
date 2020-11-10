@@ -16,7 +16,7 @@ enum ViewState {
 }
 
 struct ContentView: View {
-    @ObservedObject
+    @StateObject
     var viewModel = ContentViewModel()
     
     var body: some View {
@@ -32,7 +32,7 @@ struct ContentView: View {
                                 }
                         }
                     }
-                }.padding(EdgeInsets(top: 20, leading: 0.0, bottom: 0.0, trailing: 0.0))
+                }.padding(.top, 20)
                 
                 if viewModel.isLoading {
                     ProgressView()

@@ -11,7 +11,7 @@ import Combine
 
 struct PhotoView: View {
 
-    @ObservedObject
+    @StateObject
     var viewModel: PhotoViewModel
     
     @Binding
